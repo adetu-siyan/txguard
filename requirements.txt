@@ -1,0 +1,3 @@
+azure-eventhub
+azure-storage-blob
+python-dotenv
