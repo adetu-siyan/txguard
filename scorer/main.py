@@ -59,7 +59,7 @@ def _write_and_send(txn, f):
     )
 
 
-def generate_population_stream(count=200):
+def generate_population_stream(count=5000):
     """
     Generates `count` transaction EVENTS (a sequence-producing generator
     counts as multiple events, one per transaction it returns) drawn from
@@ -89,17 +89,17 @@ def generate_population_stream(count=200):
                             break
                         _write_and_send(txn, f)
                         sent += 1
-                        time.sleep(random.uniform(0.3, 1.5))
+                        # time.sleep(random.uniform(0.3, 1.5))
                 else:
                     txn = fn()
                     _write_and_send(txn, f)
                     sent += 1
-                    time.sleep(random.uniform(0.3, 1.5))
+                    # time.sleep(random.uniform(0.3, 1.5))
             else:
                 txn = generate_normal_transaction()
                 _write_and_send(txn, f)
                 sent += 1
-                time.sleep(random.uniform(0.2, 1.0))
+                # time.sleep(random.uniform(0.2, 1.0))
 
 
 if __name__ == "__main__":
@@ -107,6 +107,6 @@ if __name__ == "__main__":
         # Larger default count than before (200 vs 20) — at a true ~2%
         # suspicious rate, a 20-event run would often produce zero or one
         # suspicious example, which isn't enough to validate anything against.
-        generate_population_stream(count=200)
+        generate_population_stream(count=5000)
     finally:
         close_producer()
