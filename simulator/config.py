@@ -5,7 +5,7 @@ import random
 # structuring detection possible — without a shared customer_id, no system
 # (rule-based or ML) can see that two "different" accounts are the same person.
 
-NUM_CUSTOMERS = 18  # fewer customers than accounts, since some hold multiple
+NUM_CUSTOMERS = 80  # fewer customers than accounts, since some hold multiple
 
 CUSTOMER_IDS = [f"CUST-{2000 + i}" for i in range(NUM_CUSTOMERS)]
 

@@ -78,7 +78,7 @@ def generate_population_stream(count):
 
 
 if __name__ == "__main__":
-    TARGET_COUNT = 5000
+    TARGET_COUNT = 10000
     print(f"TxGuard Simulator — generating {TARGET_COUNT} transactions")
     try:
         generate_population_stream(count=TARGET_COUNT)
