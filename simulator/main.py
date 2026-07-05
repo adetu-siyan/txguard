@@ -14,7 +14,7 @@ from .generators import (
     generate_burst_sequence,
     generate_transfer_velocity_sequence,
 )
-from .eventhub_client import send_transaction, close_producer
+from .producer import send_transaction, close_producer
 
 OUTPUT_FILE = os.path.join(
     os.path.dirname(__file__), "..", "data", "simulated_transactions.jsonl"
@@ -36,7 +36,7 @@ SUSPICIOUS_GENERATORS = [
 
 
 def _write_and_send(txn, f):
-    # send_transaction(txn)  # disabled for offline run
+    send_transaction(txn)  # disabled for offline run
     f.write(json.dumps(txn) + "\n")
     label = "SUSPICIOUS" if txn["is_suspicious"] else "normal"
     typ = txn.get("suspicious_typology") or "-"
