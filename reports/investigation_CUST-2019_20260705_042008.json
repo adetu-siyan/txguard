@@ -1,0 +1,41 @@
+{
+  "alert": {
+    "transaction_id": "TXN-EC335D79",
+    "account_id": "ACC-1030",
+    "customer_id": "CUST-2019",
+    "account_tier": "TIER_1",
+    "amount": 2549429.59,
+    "timestamp": "2026-07-04T19:01:05.749530Z",
+    "iso_score": 0.3787,
+    "rf_score": 0.9639,
+    "gnn_score": 1.0,
+    "txguard_risk_score": 89.2,
+    "risk_tier": "HIGH",
+    "triggered_rules": [
+      "NFIU_THRESHOLD_APPROACH",
+      "BURST_PATTERN",
+      "STRUCTURING_DETECTED",
+      "TRANSFER_VELOCITY",
+      "KYC_TIER1_BREACH"
+    ],
+    "regulatory_reference": "MLPPA 2022, Section 2 \u2014 mandatory NFIU reporting for cash transactions exceeding \u20a65,000,000 (individuals) / \u20a610,000,000 (corporates)",
+    "legal_consequence": "Failure to file mandatory report within 7 days: \u20a6250,000\u2013\u20a61,000,000/day fine",
+    "recommended_action": "Escalate to MLRO. File STR with NFIU within 7 days.",
+    "scored_at": "2026-07-05T04:19:21.225077Z"
+  },
+  "customer_id": "CUST-2019",
+  "account_id": "ACC-1030",
+  "all_accounts": [
+    "ACC-1030"
+  ],
+  "investigated_at": "2026-07-05T04:20:03.315392Z",
+  "model_used": "qwen/qwen3.6-27b",
+  "steps": {
+    "pattern_analysis": "\n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Nigerian AML compliance analyst assistant\n   - **Regulatory Framework:** MLPPA 2022, CBN Cash-Related Policies (Jan 2026), CBN Tiered KYC\n   - **Task:** Analyze flagged account, identify fraud typology, provide evidence, cite regulations, determine single vs. cross-account activity\n   - **Alert Details:**\n     - Account: ACC-1030 (CUST-2019)\n     - Tier: TIER_1 (\u20a630,000 daily limit per CBN)\n     - Flagged Amount: \u20a62,549,429.59\n     - Risk Score: 89.2/100 (HIGH)\n     - Triggered Rules: NFIU_THRESHOLD_APPROACH, BURST_PATTERN, STRUCTURING_DETECTED, TRANSFER_VELOCITY, KYC_TIER1_BREACH\n     - Model Scores: ISO=0.379 | RF=0.964 | GNN=1.000\n     - Timestamp: 2026-07-04T19:01:05.749530Z\n   - **Transaction History (last 24h, all accounts):**\n     - Total: 14 transactions, Combined: \u20a68,437,527.50\n     - Listed transactions (10 shown, but says 14 total - I'll work with what's provided, noting the discrepancy if relevant, but focus on the pattern)\n     - All transactions are on ACC-1030\n     - Amounts range from \u20a6500 to \u20a62.58M\n     - Channels: ATM, USSD, Mobile, POS\n     - Dates/Times: All on 2026-07-04, spanning 03:50 to 22:02\n     - Notable: Multiple large transfers (\u20a62.48M, \u20a62.58M, \u20a62.54M) and withdrawals (\u20a6113k, \u20a6174k)\n     - Tier 1 limit is \u20a630,000/day. All large transactions massively exceed this.\n     - Combined amount \u20a68.43M exceeds NFIU cash reporting threshold (\u20a65M) but these are mostly transfers/withdrawals, not necessarily cash deposits. However, MLPPA 2022 Sec 2(1) mentions cash transactions >\u20a65M. The alert says \"NFIU_THRESHOLD_APPROACH\" and \"STRUCTURING_DETECTED",
+    "cross_account_analysis": null,
+    "risk_assessment": "\n<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Nigerian AML compliance analyst assistant\n   - **Regulatory Framework:** MLPPA 2022, CBN Cash-Related Policies (Jan 2026), CBN Tiered KYC\n   - **Task:** Analyze flagged account, identify fraud typology, provide evidence, cite regulations, determine single vs. cross-account activity\n   - **Alert Details:**\n     - Account: ACC-1030 (CUST-2019)\n     - Tier: TIER_1 (\u20a630,000 daily limit per CBN)\n     - Flagged Amount: \u20a62,549,429.59\n     - Risk Score: 89.2/100 (HIGH)\n     - Triggered Rules: NFIU_THRESHOLD_APPROACH, BURST_PATTERN, STRUCTURING_DETECTED, TRANSFER_VELOCITY, KYC_TIER1_BREACH\n     - Model Scores: ISO=0.379 | RF=0.964 | GNN=1.000\n     - Timestamp: 2026-07-04T19:01:05.749530Z\n   - **Transaction History (last 24h, all accounts):**\n     - Total: 14 transactions, Combined: \u20a68,437,527.50\n     - Listed transactions (10 shown, but says 14 total - I'll work with what's provided, noting the discrepancy if relevant, but focus on the pattern)\n     - All transactions are on ACC-1030\n     - Amounts range from \u20a6500 to \u20a62.58M\n     - Channels: ATM, USSD, Mobile, POS\n     - Dates/Times: All on 2026-07-04, spanning 03:50 to 22:02\n     - Notable: Multiple large transfers (\u20a62.48M, \u20a62.58M, \u20a62.54M) and withdrawals (\u20a6113k, \u20a6174k)\n     - Tier 1"
+  },
+  "str_draft": null,
+  "final_recommendation": "ENHANCED MONITORING",
+  "mlro_decision": "PENDING"
+}

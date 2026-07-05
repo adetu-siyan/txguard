@@ -2,3 +2,7 @@ azure-eventhub
 azure-storage-blob
 python-dotenv
 numpy
+groq
+pytorch
+psql
+sqlalchemy

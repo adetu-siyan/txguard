@@ -1,0 +1,41 @@
+{
+  "alert": {
+    "transaction_id": "TXN-EC335D79",
+    "account_id": "ACC-1030",
+    "customer_id": "CUST-2019",
+    "account_tier": "TIER_1",
+    "amount": 2549429.59,
+    "timestamp": "2026-07-04T19:01:05.749530Z",
+    "iso_score": 0.3787,
+    "rf_score": 0.9639,
+    "gnn_score": 1.0,
+    "txguard_risk_score": 89.2,
+    "risk_tier": "HIGH",
+    "triggered_rules": [
+      "NFIU_THRESHOLD_APPROACH",
+      "BURST_PATTERN",
+      "STRUCTURING_DETECTED",
+      "TRANSFER_VELOCITY",
+      "KYC_TIER1_BREACH"
+    ],
+    "regulatory_reference": "MLPPA 2022, Section 2 \u2014 mandatory NFIU reporting for cash transactions exceeding \u20a65,000,000 (individuals) / \u20a610,000,000 (corporates)",
+    "legal_consequence": "Failure to file mandatory report within 7 days: \u20a6250,000\u2013\u20a61,000,000/day fine",
+    "recommended_action": "Escalate to MLRO. File STR with NFIU within 7 days.",
+    "scored_at": "2026-07-05T04:24:37.004201Z"
+  },
+  "customer_id": "CUST-2019",
+  "account_id": "ACC-1030",
+  "all_accounts": [
+    "ACC-1030"
+  ],
+  "investigated_at": "2026-07-05T04:25:19.848554Z",
+  "model_used": "qwen/qwen3.6-27b",
+  "steps": {
+    "pattern_analysis": "<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Nigerian AML compliance analyst assistant\n   - **Regulatory Framework:** MLPPA 2022, CBN Cash-Related Policies (Jan 2026), CBN Tiered KYC\n   - **Task:** Analyze flagged account, identify fraud typology, provide evidence, cite regulations, determine single vs cross-account activity\n   - **Alert Details:**\n     - Account: ACC-1030 (CUST-2019)\n     - Tier: TIER_1\n     - Flagged Amount: \u20a62,549,429.59\n     - Risk Score: 89.2/100 (HIGH)\n     - Triggered Rules: NFIU_THRESHOLD_APPROACH, BURST_PATTERN, STRUCTURING_DETECTED, TRANSFER_VELOCITY, KYC_TIER1_BREACH\n     - Model Scores: High across models\n     - Timestamp: 2026-07-04T19:01:05Z\n   - **Transaction History (24h, 14 txns, total \u20a68.43M):**\n     - Multiple transfers, withdrawals, airtime purchases\n     - Large transfers: \u20a62,487,737.44, \u20a62,586,135.85, \u20a62,549,429.59\n     - Smaller txns: airtime, POS transfers, ATM withdrawals\n     - All on same account (ACC-1030)\n     - Tier 1 limit is \u20a630,000/day, but transactions far exceed this\n     - Total volume: \u20a68.43M in 24h\n     - Pattern: Rapid succession, large round/near-round amounts, mixed channels (USSD, mobile, POS, ATM)\n\n2.  **Identify Primary Fraud Typology:**\n   - The triggered rules explicitly mention `STRUCTURING_DETECTED`, `BURST_PATTERN`, `TRANSFER_VELOCITY`, `KYC_TIER1_BREACH`, `NFIU_THRESHOLD_APPROACH`.\n   - The pattern shows multiple transactions just under or around thresholds, rapid movement of funds, and clear breach of Tier 1 limits.\n   - This is classic **Structuring (Smurfing)** combined with **Velocity Fraud/Account Takeover (ATO)** or **Money Laundering (Placement/Integration phase)**. Given the regulatory context and rules, \"Structuring/Smurfing\" is the primary typology, likely facilitated by compromised credentials (ATO) or authorized but illicit layering.\n   - I'll classify it as **Structuring (Smurfing) / Velocity-Based",
+    "cross_account_analysis": null,
+    "risk_assessment": "<think>\nHere's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Role:** Nigerian AML compliance analyst assistant\n   - **Regulatory Framework:** MLPPA 2022, CBN Cash-Related Policies (Jan 2026), CBN Tiered KYC\n   - **Task:** Analyze flagged account, identify fraud typology, provide evidence, cite regulations, determine single vs cross-account activity\n   - **Alert Details:**\n     - Account: ACC-1030 (CUST-2019)\n     - Tier: TIER_1\n     - Flagged Amount: \u20a62,549,429.59\n     - Risk Score: 89.2/100 (HIGH)\n     - Triggered Rules: NFIU_THRESHOLD_APPROACH, BURST_PATTERN, STRUCTURING_DETECTED, TRANSFER_VELOCITY, KYC_TIER1_BREACH\n     - Model Scores: High across models\n     - Timestamp: 2026-07-04T19:01:05Z\n   - **Transaction History (24h, 14 txns, total \u20a68.43M):**\n     - Multiple transfers, withdrawals, airtime purchases\n     - Large transfers: \u20a62,487,737.44, \u20a62,586,135.85, \u20a62,549,429.59\n     - Smaller txns: airtime, POS transfers, ATM withdrawals\n     - All on same account (ACC-1030)\n     - Tier 1 limit is \u20a630,000/day, but transactions far exceed this\n     - Total volume: \u20a68.43M in 24h\n     - Pattern: Rapid succession, large round/near-round amounts, mixed channels (USSD, mobile, POS, ATM)\n\n2.  **Identify Primary Fraud Typology:**\n   - The triggered rules explicitly mention `STRUCTURING_DETECTED`, `BURST_PATTERN`, `TRANSFER_VELOCITY`, `KYC_TIER1_BREACH`, `NFIU_THRESHOLD_APPROACH`.\n   - The pattern shows multiple transactions just under or around thresholds, rapid movement of funds, and clear"
+  },
+  "str_draft": null,
+  "final_recommendation": "ENHANCED MONITORING",
+  "mlro_decision": "PENDING"
+}
